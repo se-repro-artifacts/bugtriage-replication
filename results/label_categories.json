@@ -1,0 +1,29 @@
+{
+ "datasets": [
+  "data/dataset_all.jsonl"
+ ],
+ "n_total": 24586,
+ "by_split": {
+  "train": {
+   "never_changed": 8916,
+   "inbox_triage": 1075,
+   "specific_reassign": 831,
+   "bot_only": 643,
+   "total": 11465
+  },
+  "test": {
+   "never_changed": 4538,
+   "inbox_triage": 595,
+   "specific_reassign": 434,
+   "bot_only": 299,
+   "total": 5866
+  },
+  "test2026": {
+   "never_changed": 5807,
+   "inbox_triage": 463,
+   "specific_reassign": 687,
+   "bot_only": 298,
+   "total": 7255
+  }
+ }
+}

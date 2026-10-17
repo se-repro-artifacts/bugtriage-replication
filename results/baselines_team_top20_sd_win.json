@@ -1,0 +1,331 @@
+{
+ "tag": "team_top20_sd",
+ "stats": {
+  "n_all": 17331,
+  "n_train_all": 11465,
+  "n_test_all": 5866,
+  "n_train": 11021,
+  "n_test": 5469,
+  "n_classes": 20
+ },
+ "classes": [
+  "GFX",
+  "Layout",
+  "Frontend",
+  "OS Integration",
+  "DOM Core",
+  "Media",
+  "Search Next Generation",
+  "Javascript",
+  "DevTools",
+  "Accessibility",
+  "Networking",
+  "DOM LWS",
+  "Onboarding, Messaging, and Communication",
+  "Privacy Engineering",
+  "Credential Management",
+  "CI and Quality Tools",
+  "Crypto",
+  "Desktop Integrations",
+  "Security Engineering",
+  "Telemetry"
+ ],
+ "test_reassign_rate": 0.23770341927226185,
+ "test_moved_at_this_granularity_rate": 0.2133845309928689,
+ "train_reassign_rate": 0.22992468922965248,
+ "models": {
+  "majority": {
+   "all": {
+    "n": 5469,
+    "acc": 0.09526421649296032,
+    "macro_f1": 0.008697829716193655,
+    "top3": 0.3006034009873834
+   },
+   "reassigned": {
+    "n": 1300,
+    "acc": 0.09384615384615384,
+    "macro_f1": 0.008579465541490857,
+    "top3": 0.3030769230769231
+   },
+   "never_reassigned": {
+    "n": 4169,
+    "acc": 0.09570640441352843,
+    "macro_f1": 0.008734676007005254,
+    "top3": 0.2998320940273447
+   },
+   "moved_at_this_granularity": {
+    "n": 1167,
+    "acc": 0.09682947729220223,
+    "macro_f1": 0.008828125000000001,
+    "top3": 0.30248500428449016
+   },
+   "moved_from_specific_component": {
+    "n": 417,
+    "acc": 0.09352517985611511,
+    "macro_f1": 0.008552631578947369,
+    "top3": 0.30455635491606714
+   }
+  },
+  "keyword_rules": {
+   "all": {
+    "n": 5469,
+    "acc": 0.23642347778387274,
+    "macro_f1": 0.2988814457621142,
+    "top3": 0.4306088864509051
+   },
+   "reassigned": {
+    "n": 1300,
+    "acc": 0.22923076923076924,
+    "macro_f1": 0.24375056300964903,
+    "top3": 0.43
+   },
+   "never_reassigned": {
+    "n": 4169,
+    "acc": 0.23866634684576638,
+    "macro_f1": 0.30819465515048955,
+    "top3": 0.43079875269848883
+   },
+   "moved_at_this_granularity": {
+    "n": 1167,
+    "acc": 0.23307626392459296,
+    "macro_f1": 0.24156905670304166,
+    "top3": 0.43273350471293914
+   },
+   "moved_from_specific_component": {
+    "n": 417,
+    "acc": 0.16546762589928057,
+    "macro_f1": 0.16197178525558215,
+    "top3": 0.3669064748201439
+   }
+  },
+  "tfidf_logreg": {
+   "all": {
+    "n": 5469,
+    "acc": 0.6253428414701042,
+    "macro_f1": 0.5702683009863904,
+    "top3": 0.8288535381239714
+   },
+   "reassigned": {
+    "n": 1300,
+    "acc": 0.5953846153846154,
+    "macro_f1": 0.5189928151780517,
+    "top3": 0.8307692307692308
+   },
+   "never_reassigned": {
+    "n": 4169,
+    "acc": 0.6346845766370832,
+    "macro_f1": 0.5752607444606536,
+    "top3": 0.8282561765411369
+   },
+   "moved_at_this_granularity": {
+    "n": 1167,
+    "acc": 0.5929734361610969,
+    "macro_f1": 0.5170990028478849,
+    "top3": 0.829477292202228
+   },
+   "moved_from_specific_component": {
+    "n": 417,
+    "acc": 0.5083932853717026,
+    "macro_f1": 0.39699609465147206,
+    "top3": 0.7529976019184652
+   }
+  }
+ },
+ "keywords_sample": {
+  "GFX": [
+   "gpu-canvas",
+   "webgpu",
+   "wgpu-core",
+   "wgpu_bindings",
+   "cts",
+   "swgl",
+   "gfx-reviewers",
+   "drawtargetwebgl",
+   "d2d",
+   "crtstuff"
+  ],
+  "Layout": [
+   "csswg-drafts",
+   "css-grid",
+   "content-visibility",
+   "nslinelist_iterator",
+   "nscontainerframe",
+   "writingmode",
+   "css-contain",
+   "reflowoutput",
+   "nsreflowstatus",
+   "container-queries"
+  ],
+  "Frontend": [
+   "firefoxview-next",
+   "subs",
+   "new-webcompat-reporter",
+   "firefox-view-next",
+   "webcopmpat",
+   "lnk",
+   "display-text-tracks",
+   "unpip",
+   "improved-video-controls",
+   "migrator"
+  ],
+  "OS Integration": [
+   "midi",
+   "wl_surface",
+   "wayland-1",
+   "webmidi",
+   "tortoisegit",
+   "nsuseridleservice",
+   "windowsurfaceprovider",
+   "google_breakpad",
+   "breakpad-client",
+   "gtk3"
+  ],
+  "DOM Core": [
+   "editorbase",
+   "htmleditor",
+   "editordompointbase",
+   "libeditor",
+   "execcommand",
+   "autorangearray",
+   "htmleditsubactionhandler",
+   "htmleditordeletehandler",
+   "autodeleterangeshandler",
+   "whitespacevisibilitykeeper"
+  ],
+  "Media": [
+   "mediaresult",
+   "libwebrtc",
+   "timeunit",
+   "mediadata",
+   "libcubeb",
+   "mediadecoderstatemachine",
+   "peerconnectionimpl",
+   "webcodecs",
+   "mediasource",
+   "wmfme"
+  ],
+  "Search Next Generation": [
+   "quicksuggest",
+   "merino",
+   "featuregate",
+   "bestmatch",
+   "datacollection",
+   "colorway-closet",
+   "quickactions",
+   "quickaction",
+   "showsearchterms",
+   "engagement"
+  ],
+  "Javascript": [
+   "fuzzing-safe",
+   "ion-offthread-compile",
+   "newglobal",
+   "no-threads",
+   "fast-warmup",
+   "ion-warmup-threshold",
+   "cpu-count",
+   "js-shell",
+   "ion",
+   "gcreason"
+  ]
+ },
+ "lr_C": 16.0,
+ "lr_val_acc": 0.6060365369340747,
+ "selective_tfidf_logreg": {
+  "cov50": {
+   "selective_acc": 0.8471104608632041,
+   "frac_reassigned_in_kept": 0.232626188734455
+  },
+  "cov70": {
+   "selective_acc": 0.7586206896551724,
+   "frac_reassigned_in_kept": 0.24085684430512017
+  },
+  "cov80": {
+   "selective_acc": 0.7122285714285714,
+   "frac_reassigned_in_kept": 0.24182857142857142
+  },
+  "cov90": {
+   "selective_acc": 0.670865501828525,
+   "frac_reassigned_in_kept": 0.24197480698902885
+  },
+  "cov100": {
+   "selective_acc": 0.6253428414701042,
+   "frac_reassigned_in_kept": 0.23770341927226185
+  },
+  "AURC_risk": 0.16377079993557492,
+  "abstain_rate_at_cov80": {
+   "reassigned": 0.18615384615384614,
+   "moved_from_specific_component": 0.18465227817745802,
+   "never_reassigned": 0.20436555528903813
+  }
+ },
+ "error_analysis": {
+  "n_wrong": 2049,
+  "wrong_and_pred_eq_initial": 66,
+  "wrong_among_reassigned": 526,
+  "wrong_among_reassigned_pred_eq_initial": 66,
+  "reporter_initial_label_acc_on_test": 0.7866154690071311,
+  "top_confusions(true,pred,count)": [
+   [
+    "Frontend",
+    "Search Next Generation",
+    102
+   ],
+   [
+    "Search Next Generation",
+    "Frontend",
+    71
+   ],
+   [
+    "OS Integration",
+    "Frontend",
+    71
+   ],
+   [
+    "OS Integration",
+    "GFX",
+    52
+   ],
+   [
+    "DOM Core",
+    "Layout",
+    52
+   ],
+   [
+    "Layout",
+    "GFX",
+    49
+   ],
+   [
+    "Frontend",
+    "OS Integration",
+    43
+   ],
+   [
+    "GFX",
+    "Layout",
+    42
+   ],
+   [
+    "Layout",
+    "DOM Core",
+    32
+   ],
+   [
+    "DevTools",
+    "Layout",
+    32
+   ],
+   [
+    "DOM Core",
+    "OS Integration",
+    31
+   ],
+   [
+    "Media",
+    "OS Integration",
+    31
+   ]
+  ]
+ }
+}

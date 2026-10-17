@@ -1,0 +1,144 @@
+{
+ "records": "code\\..\\results\\llm_agent_deepseek-flash_test2026_disabled_n6347_seed0.jsonl",
+ "condition": "agent",
+ "model": "deepseek-flash",
+ "seed": 0,
+ "split": "test2026",
+ "metrics": {
+  "n": 6347,
+  "coverage_parse": 0.9974791239955885,
+  "acc_all": 0.7885615251299827,
+  "macro_f1": 0.7603817979878275,
+  "top3": 0.9352449976366788,
+  "n_tool_calls_mean": 3.5678273199936976,
+  "latency_s_mean": 5.087625649913345,
+  "prompt_tokens_mean": 30214.213014022374,
+  "completion_tokens_mean": 302.7143532377501,
+  "AURC_risk": 0.07718147719718556,
+  "selective_acc_cov50": 0.9360428481411468,
+  "selective_acc_cov70": 0.8906144496961512,
+  "selective_acc_cov80": 0.8615596691610871,
+  "selective_acc_cov90": 0.8294817927170869,
+  "abstain_rates_at_cov80": {
+   "reassigned": {
+    "n": 1403,
+    "abstain_rate_by_confidence": 0.2359230220955096
+   },
+   "never_reassigned": {
+    "n": 4944,
+    "abstain_rate_by_confidence": 0.18972491909385114
+   },
+   "moved_from_specific_component": {
+    "n": 662,
+    "abstain_rate_by_confidence": 0.22658610271903323
+   }
+  },
+  "explicit_abstain": {
+   "abstain_rate": 0.002678430754687254,
+   "coverage": 0.9973215692453128,
+   "acc_on_answered": 0.7900473933649289,
+   "abstain_recall_moved_from_specific": 0.0,
+   "abstain_rate_reassigned": 0.0007127583749109052,
+   "abstain_rate_never_reassigned": 0.003236245954692557
+  },
+  "top_confusions": [
+   {
+    "true_team": "Frontend",
+    "pred_team": "Search Next Generation",
+    "n": 183
+   },
+   {
+    "true_team": "Frontend",
+    "pred_team": "Onboarding, Messaging, and Communication",
+    "n": 59
+   },
+   {
+    "true_team": "Search Next Generation",
+    "pred_team": "Frontend",
+    "n": 54
+   },
+   {
+    "true_team": "DOM Core",
+    "pred_team": "Layout",
+    "n": 45
+   },
+   {
+    "true_team": "Layout",
+    "pred_team": "GFX",
+    "n": 45
+   },
+   {
+    "true_team": "Frontend",
+    "pred_team": "Privacy Engineering",
+    "n": 38
+   },
+   {
+    "true_team": "Privacy Engineering",
+    "pred_team": "Frontend",
+    "n": 34
+   },
+   {
+    "true_team": "DOM Core",
+    "pred_team": "OS Integration",
+    "n": 34
+   },
+   {
+    "true_team": "DOM Core",
+    "pred_team": "DOM LWS",
+    "n": 31
+   },
+   {
+    "true_team": "GFX",
+    "pred_team": "Layout",
+    "n": 26
+   }
+  ],
+  "cost_usd_offpeak_list": 29.9182,
+  "cost_usd_per_bug": 0.004714,
+  "by_ambiguity_category": {
+   "bot_only": {
+    "n": 289,
+    "acc": 0.8339100346020761,
+    "top3": 0.9653979238754326,
+    "abstain_rate_by_confidence_at_cov80": 0.23183391003460208,
+    "abstain_lift_at_cov80": 1.1591695501730106,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.03806228373702422,
+    "error_is_initial_team_rate": 0.041666666666666664
+   },
+   "inbox_triage": {
+    "n": 444,
+    "acc": 0.7454954954954955,
+    "top3": 0.9414414414414415,
+    "abstain_rate_by_confidence_at_cov80": 0.2545045045045045,
+    "abstain_lift_at_cov80": 1.272522522522523,
+    "explicit_abstain_rate": 0.0022522522522522522,
+    "pred_eq_initial_team_rate": 0.03153153153153153,
+    "error_is_initial_team_rate": 0.061946902654867256
+   },
+   "never_changed": {
+    "n": 4958,
+    "acc": 0.799919322307382,
+    "top3": 0.9352561516740622,
+    "abstain_rate_by_confidence_at_cov80": 0.1897942718838241,
+    "abstain_lift_at_cov80": 0.9489713594191208,
+    "explicit_abstain_rate": 0.003227107704719645,
+    "pred_eq_initial_team_rate": 0.799717628075837,
+    "error_is_initial_team_rate": 0.0
+   },
+   "specific_reassign": {
+    "n": 656,
+    "acc": 0.711890243902439,
+    "top3": 0.9176829268292683,
+    "abstain_rate_by_confidence_at_cov80": 0.22560975609756098,
+    "abstain_lift_at_cov80": 1.1280487804878052,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.41615853658536583,
+    "error_is_initial_team_rate": 0.4973544973544973
+   }
+  },
+  "pred_eq_initial_team_overall": 0.6716559004253978
+ },
+ "labeled_source": "code\\..\\data\\dataset_labeled.jsonl",
+ "tag": "agent_deepseek-flash_test2026_disabled_n6347_seed0"
+}

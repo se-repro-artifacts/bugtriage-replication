@@ -1,0 +1,48 @@
+{
+ "model": "deepseek-flash",
+ "prompt": "A bug report about a WebGL canvas crash was filed under Core::Graphics. Reply with JSON only, no prose: {\"team\": \"...\", \"confidence\": 0.0, \"abstain\": false}",
+ "variants": [
+  {
+   "completion_tokens": 22,
+   "reasoning_tokens": null,
+   "prompt_tokens": 48,
+   "cache_hit_tokens": 0,
+   "seconds": 1.6,
+   "content": "{\"team\": \"WebGL\", \"confidence\": 0.85, \"abstain\": false}",
+   "finish_reason": "stop",
+   "variant": "thinking disabled",
+   "sent": {
+    "thinking": {
+     "type": "disabled"
+    }
+   }
+  },
+  {
+   "completion_tokens": 800,
+   "reasoning_tokens": 800,
+   "prompt_tokens": 74,
+   "cache_hit_tokens": 0,
+   "seconds": 6.0,
+   "content": "",
+   "finish_reason": "length",
+   "variant": "thinking enabled, effort low",
+   "sent": {
+    "thinking": {
+     "type": "enabled"
+    },
+    "reasoning_effort": "low"
+   }
+  },
+  {
+   "completion_tokens": 800,
+   "reasoning_tokens": 800,
+   "prompt_tokens": 74,
+   "cache_hit_tokens": 0,
+   "seconds": 6.6,
+   "content": "",
+   "finish_reason": "length",
+   "variant": "default (nothing sent)",
+   "sent": {}
+  }
+ ]
+}

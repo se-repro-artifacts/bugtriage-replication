@@ -1,0 +1,160 @@
+"""Pairwise McNemar tests between every condition on one test split.
+
+The writing requirements ask for significance tests, and the natural comparison here is paired:
+every condition is scored on the same bugs, so the right test is McNemar's exact test on the
+discordant pairs of top-1 correctness. Writes results/significance_<split>.json and a LaTeX
+p-value matrix for the paper.
+
+Usage: python significance.py --split test2026
+"""
+import argparse
+import glob
+import json
+import os
+
+import numpy as np
+from scipy.stats import binomtest
+
+ROOT = os.path.join(os.path.dirname(__file__), "..")
+
+
+def read_records(path):
+    with open(path, encoding="utf-8") as fh:
+        return [json.loads(line) for line in fh if line.strip()]
+
+
+# Runs that are not part of the reported sweep: smoke tests, the thinking-mode A/B, and the
+# settled-subset robustness runs. Pairing them against the sweep would compare different bug sets
+# and, worse, two files resolving to the same label would silently compare a run with itself.
+PILOT_MARKERS = ("_n3_", "_n6_", "_n12_", "_n100_")
+
+
+def discover(split):
+    found, skipped = [], []
+    for path in sorted(glob.glob(os.path.join(ROOT, "results", "*.jsonl"))):
+        base = os.path.basename(path)
+        if "_mock" in base:
+            continue
+        try:
+            recs = read_records(path)
+        except Exception:
+            continue
+        if not recs or recs[0].get("split") != split:
+            continue
+        stem = base[:-6] if base.endswith(".jsonl") else base
+        reason = None
+        if any(marker in stem for marker in PILOT_MARKERS):
+            reason = "pilot or A/B run"
+        elif "settled" in stem:
+            reason = "settled-subset robustness run"
+        elif recs[0].get("thinking") == "enabled":
+            reason = "thinking-mode A/B"
+        if reason:
+            skipped.append((base, reason))
+            continue
+        label = recs[0].get("condition") or base
+        model = recs[0].get("model") or ""
+        if model and model != "classical":
+            label = f"{label}@{model}"
+        found.append((label, path))
+
+    # Never let two files share a label: that is how a run ends up compared against itself.
+    unique, seen = [], {}
+    for label, path in found:
+        if label in seen:
+            print(f"WARNING: {os.path.basename(path)} also calls itself '{label}'; "
+                  f"keeping {os.path.basename(seen[label])} and dropping it")
+            continue
+        seen[label] = path
+        unique.append((label, path))
+    for base, reason in skipped:
+        print(f"skipped {base} ({reason})")
+    return unique
+
+
+def correctness_map(path):
+    out = {}
+    for r in read_records(path):
+        out[r["id"]] = bool(r.get("top3")) and r["top3"][0] == r["true_team"]
+    return out
+
+
+def mcnemar(a_map, b_map):
+    shared = sorted(set(a_map) & set(b_map))
+    if not shared:
+        return None
+    b = sum(1 for i in shared if a_map[i] and not b_map[i])
+    c = sum(1 for i in shared if b_map[i] and not a_map[i])
+    p = 1.0 if b + c == 0 else float(binomtest(min(b, c), b + c, 0.5).pvalue)
+    return {"n_shared": len(shared), "a_only_correct": b, "b_only_correct": c, "p_value": p}
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--split", default="test2026")
+    a = ap.parse_args()
+    conds = [(label, correctness_map(path)) for label, path in discover(a.split)]
+    if len(conds) < 2:
+        print(f"need at least two conditions on split {a.split}; found {len(conds)}")
+        return
+    labels = [c[0] for c in conds]
+    matrix = {}
+    for i, (li, mi) in enumerate(conds):
+        for lj, mj in conds[i + 1:]:
+            res = mcnemar(mi, mj)
+            if res:
+                matrix[f"{li} vs {lj}"] = res
+                print(f"{li:34s} vs {lj:34s} p={res['p_value']:.3g} "
+                      f"(only-a {res['a_only_correct']}, only-b {res['b_only_correct']}, "
+                      f"n={res['n_shared']})")
+    out_path = os.path.join(ROOT, "results", f"significance_{a.split}.json")
+    with open(out_path, "w", encoding="utf-8") as fh:
+        json.dump({"split": a.split, "labels": labels, "pairwise": matrix}, fh, indent=1)
+    print("wrote", out_path)
+
+    # A full p-value matrix would be eleven columns wide, which cannot fit a two-column paper and
+    # would not be read anyway. The table lists the comparisons that carry the argument: every
+    # condition against the agent, and the three LLM conditions against each other.
+    def esc(s):
+        return s.replace("_", r"\_")
+
+    def is_llm(label):
+        return 0 if "@" in label else 1
+
+    chosen = []
+    for pair, res in matrix.items():
+        first, second = pair.split(" vs ")
+        if "agent@" in pair or ("zeroshot@" in pair and "rag@" in pair):
+            chosen.append((is_llm(first), is_llm(second), pair, res))
+    chosen.sort(key=lambda r: (r[0], r[1], r[2]))
+
+    lines = [
+        f"% Generated by code/significance.py from results/significance_{a.split}.json",
+        r"\begin{table*}[t]\centering", r"\small",
+        r"\caption{Pairwise McNemar exact tests on top-1 correctness, %s split. Each row uses only "
+        r"the bugs that both conditions answered, so $n$ differs between rows; ``A only'' and "
+        r"``B only'' count the bugs that only the first and only the second condition got right. "
+        r"Source: \texttt{results/significance\_%s.json}.}" % (a.split, a.split),
+        r"\label{tab:significance-%s}" % a.split,
+        r"\begin{tabular}{lrrrr}", r"\toprule",
+        r"Comparison & $n$ shared & A only & B only & $p$ \\", r"\midrule",
+    ]
+    for _, _, pair, res in chosen:
+        first, second = pair.split(" vs ")
+        lines.append(" & ".join([
+            f"{esc(first)} vs {esc(second)}",
+            f"{res['n_shared']:,}".replace(",", r"{,}"),
+            f"{res['a_only_correct']:,}".replace(",", r"{,}"),
+            f"{res['b_only_correct']:,}".replace(",", r"{,}"),
+            "%.2g" % res["p_value"],
+        ]) + r" \\")
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table*}", ""]
+    tex_path = os.path.join(ROOT, "paper", "tables", f"significance_{a.split}.tex")
+    os.makedirs(os.path.dirname(tex_path), exist_ok=True)
+    with open(tex_path, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines))
+    print("wrote", tex_path)
+
+
+if __name__ == "__main__":
+    main()

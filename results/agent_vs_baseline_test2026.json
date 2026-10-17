@@ -1,0 +1,50 @@
+{
+ "split": "test2026",
+ "n_shared": 6347,
+ "by_category": {
+  "never_changed": {
+   "n": 4958,
+   "agent_only": 1094,
+   "classical_only": 253,
+   "both": 2872,
+   "neither": 739,
+   "net_points": 16.96
+  },
+  "specific_reassign": {
+   "n": 656,
+   "agent_only": 138,
+   "classical_only": 36,
+   "both": 329,
+   "neither": 153,
+   "net_points": 15.55
+  },
+  "all": {
+   "n": 6347,
+   "agent_only": 1383,
+   "classical_only": 342,
+   "both": 3622,
+   "neither": 1000,
+   "net_points": 16.4
+  }
+ },
+ "where_the_agent_loses": {
+  "Frontend": 259,
+  "DOM Core": 108,
+  "OS Integration": 68,
+  "Search Next Generation": 55,
+  "Layout": 42,
+  "GFX": 21,
+  "Media": 19,
+  "Networking": 19,
+  "Privacy Engineering": 12,
+  "DevTools": 7,
+  "Javascript": 6,
+  "Onboarding, Messaging, and Communication": 5,
+  "Accessibility": 4,
+  "Security Engineering": 2,
+  "Credential Management": 2,
+  "CI and Quality Tools": 2
+ },
+ "llm_file": "llm_agent_deepseek-flash_test2026_disabled_n6347_seed0.jsonl",
+ "classical_file": "pred_tfidf_logreg_test2026.jsonl"
+}

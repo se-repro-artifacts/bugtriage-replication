@@ -1,0 +1,175 @@
+{
+ "n_bugs": 17331,
+ "by_split": {
+  "train": 11465,
+  "test": 5866
+ },
+ "by_product": {
+  "Firefox": 3724,
+  "Core": 11365,
+  "Toolkit": 1398,
+  "DevTools": 844
+ },
+ "with_description": 16512,
+ "n_fine_labels": 250,
+ "n_team_labels": 28,
+ "team_unknown": 0,
+ "ever_changed_component_or_product": {
+  "n": 3937,
+  "pct": 22.72
+ },
+ "history_fetched_for_changed": 3937,
+ "initial_ne_final": {
+  "component": {
+   "n": 3893,
+   "pct": 22.46
+  },
+  "team (both known)": {
+   "n": 3212,
+   "pct": 18.53
+  },
+  "initial_team_unknown_among_changed": 325,
+  "product": {
+   "n": 2648,
+   "pct": 15.28
+  }
+ },
+ "changed_by_split": {
+  "train": 22.62,
+  "test": 22.91
+ },
+ "changed_by_final_product": {
+  "Firefox": 17.99,
+  "Core": 24.89,
+  "Toolkit": 19.67,
+  "DevTools": 19.31
+ },
+ "n_move_events_among_changed": {
+  "1": 2843,
+  "2": 858,
+  "3": 185,
+  "4": 38,
+  "5": 13
+ },
+ "bot_vs_human_among_changed": {
+  "only_bot_moves": 942,
+  "any_human_move": 2995,
+  "any_bot_move": 1620
+ },
+ "top_initial_components_of_moved": [
+  [
+   "Firefox::Untriaged",
+   2289
+  ],
+  [
+   "Firefox::Security",
+   207
+  ],
+  [
+   "Firefox::General",
+   115
+  ],
+  [
+   "Core::General",
+   75
+  ],
+  [
+   "Core::DOM: Core & HTML",
+   63
+  ],
+  [
+   "Core::Layout",
+   46
+  ],
+  [
+   "Web Compatibility::Site Reports",
+   33
+  ],
+  [
+   "Core::Audio/Video",
+   31
+  ],
+  [
+   "Fenix::General",
+   26
+  ],
+  [
+   "Core::JavaScript Engine",
+   26
+  ],
+  [
+   "Core::CSS Parsing and Computation",
+   24
+  ],
+  [
+   "Firefox::Firefox View",
+   22
+  ]
+ ],
+ "top_moves(initial->final)": [
+  [
+   "Firefox::Untriaged",
+   "Core::Widget: Gtk",
+   152
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::JavaScript Engine",
+   114
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::Graphics: WebRender",
+   82
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::Audio/Video: Playback",
+   73
+  ],
+  [
+   "Firefox::Untriaged",
+   "Firefox::PDF Viewer",
+   70
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::Networking",
+   52
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::CSS Parsing and Computation",
+   52
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::JavaScript Engine: JIT",
+   50
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::DOM: Core & HTML",
+   48
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::Graphics",
+   47
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::Graphics: Canvas2D",
+   45
+  ],
+  [
+   "Firefox::Untriaged",
+   "Core::Disability Access APIs",
+   45
+  ]
+ ],
+ "moved_from_General_or_Untriaged": {
+  "n": 2606,
+  "pct_of_moved": 66.94
+ }
+}

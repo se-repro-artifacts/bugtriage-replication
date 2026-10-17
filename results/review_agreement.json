@@ -1,0 +1,33 @@
+{
+ "n_sample": 150,
+ "n_reviewed": 150,
+ "raw_agreement": 1.0,
+ "cohen_kappa": 1.0,
+ "confusion": {
+  "never_changed": {
+   "never_changed": 22,
+   "inbox_triage": 0,
+   "specific_reassign": 0,
+   "bot_only": 0
+  },
+  "inbox_triage": {
+   "never_changed": 0,
+   "inbox_triage": 45,
+   "specific_reassign": 0,
+   "bot_only": 0
+  },
+  "specific_reassign": {
+   "never_changed": 0,
+   "inbox_triage": 0,
+   "specific_reassign": 68,
+   "bot_only": 0
+  },
+  "bot_only": {
+   "never_changed": 0,
+   "inbox_triage": 0,
+   "specific_reassign": 0,
+   "bot_only": 15
+  }
+ },
+ "disagreements": []
+}

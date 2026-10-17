@@ -1,0 +1,25 @@
+# Exact dependency versions used for the paper-01 experiments.
+#
+# Frozen from the working .venv on 2026-10-12 (Windows, Python 3.12.10, AMD64).
+#
+# IMPORTANT for reproducibility: the step-1 reference results in results/ were produced on a
+# Linux host whose versions were never recorded. Re-running code/baselines.py on this machine
+# with the versions below reproduces the dataset exactly (the majority-class baseline matches to
+# all 16 digits) but shifts the fitted models slightly: TF-IDF+logistic regression accuracy
+# 62.443% (recorded) vs 62.534% (here), about 5 of 5469 test bugs. Record the original host's
+# versions before claiming bit-level reproducibility in the paper.
+#
+# Install:  python -m venv .venv && .venv/Scripts/pip install -r code/requirements.txt
+
+numpy==2.5.4
+scipy==1.18.1
+scikit-learn==1.9.1
+tiktoken==0.14.0
+matplotlib==3.11.2
+
+# Optional strong baselines (installed 2026-10-12): sentence-embedding kNN and XGBoost.
+# These pull torch, which is the largest dependency in this environment.
+xgboost==3.4.1
+sentence-transformers==6.1.0
+transformers==5.19.0
+torch==2.14.1+cpu

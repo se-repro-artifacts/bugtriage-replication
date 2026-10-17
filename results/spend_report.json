@@ -1,0 +1,68 @@
+{
+ "by_day": {
+  "2026-10-13": {
+   "calls": 7102,
+   "hit": 68190336,
+   "miss": 7420494,
+   "out": 1609063,
+   "offpeak_usd": 2.283082907999987,
+   "billed_usd": 3.0551732279999992,
+   "inferred": 2451,
+   "peak_calls": 1413
+  },
+  "2026-10-14": {
+   "calls": 4657,
+   "hit": 44700288,
+   "miss": 4310476,
+   "out": 413630,
+   "offpeak_usd": 1.0288502639999975,
+   "billed_usd": 1.0288502639999975,
+   "inferred": 0,
+   "peak_calls": 0
+  },
+  "2026-10-15": {
+   "calls": 10146,
+   "hit": 97445248,
+   "miss": 9417937,
+   "out": 904762,
+   "offpeak_usd": 2.2478834939999937,
+   "billed_usd": 2.2478834939999937,
+   "inferred": 0,
+   "peak_calls": 0
+  },
+  "2026-10-16": {
+   "calls": 10773,
+   "hit": 103888128,
+   "miss": 9870118,
+   "out": 977159,
+   "offpeak_usd": 2.378477483999994,
+   "billed_usd": 2.378477483999994,
+   "inferred": 0,
+   "peak_calls": 0
+  }
+ },
+ "total": {
+  "calls": 32678,
+  "hit": 314224000,
+  "miss": 31019025,
+  "out": 3904614,
+  "offpeak_usd": 7.938294150000007,
+  "billed_usd": 8.710384469999987,
+  "inferred": 2451,
+  "peak_calls": 1413
+ },
+ "peak_multiplier": 2.0,
+ "prices_offpeak": {
+  "deepseek-flash": {
+   "hit": 0.003,
+   "miss": 0.15,
+   "out": 0.6
+  },
+  "deepseek-v4-pro": {
+   "hit": 0.022,
+   "miss": 0.66,
+   "out": 1.98
+  }
+ },
+ "local_utc_offset_hours": 8
+}

@@ -1,0 +1,213 @@
+% 共享参考文献。只放核对过的条目，每条加 note = {verified YYYY-MM-DD}。
+% 各篇论文的 paper/ 目录里引用这个文件，避免重复核对。
+%
+% 核对方式（2026-10-12）：作者本人或出版社页面、arXiv 摘要页、Semantic Scholar / OpenAlex
+% 的公开 API，或论文 PDF 本身。凡是不确定的字段都在条目里写明，没有靠记忆补全。
+
+% ---------- 归属/分派歧义与高置信度预测 ----------
+
+@inproceedings{sarkar2019ericsson,
+  author    = {Sarkar, Aindrila and Rigby, Peter C. and Bartalos, B{\'e}la},
+  title     = {Improving Bug Triaging with High Confidence Predictions at {Ericsson}},
+  booktitle = {2019 IEEE International Conference on Software Maintenance and Evolution (ICSME)},
+  year      = {2019},
+  doi       = {10.1109/ICSME.2019.00018},
+  note      = {verified 2026-10-12 (Semantic Scholar API, DOI 10.1109/ICSME.2019.00018; DBLP key conf/icsm/SarkarRB19)}
+}
+
+@inproceedings{su2021bugtossing,
+  author    = {Su, Yanqi and Xing, Zhenchang and Peng, Xin and Xia, Xin and Wang, Chong and Xu, Xiwei and Zhu, Liming},
+  title     = {Reducing Bug Triaging Confusion by Learning from Mistakes with a Bug Tossing Knowledge Graph},
+  booktitle = {2021 36th IEEE/ACM International Conference on Automated Software Engineering (ASE)},
+  year      = {2021},
+  doi       = {10.1109/ASE51524.2021.9678574},
+  note      = {verified 2026-10-12 (OpenAlex; title and authors also read from the paper PDF). The step-1 report called this ``LR-BKG''; that is a shorthand, not the title}
+}
+
+@inproceedings{su2023stillconfusing,
+  author    = {Su, Yanqi and Han, Zheming and Gao, Zhipeng and Xing, Zhenchang and Lu, Qinghua and Xu, Xiwei},
+  title     = {Still Confusing for Bug-Component Triaging? Deep Feature Learning and Ensemble Setting to Rescue},
+  booktitle = {2023 IEEE/ACM 31st International Conference on Program Comprehension (ICPC)},
+  year      = {2023},
+  doi       = {10.1109/ICPC58990.2023.00046},
+  note      = {verified 2026-10-12 (OpenAlex)}
+}
+
+% ---------- 经典与神经分派基线 ----------
+
+@misc{castelluccio2019bugbug,
+  author       = {Castelluccio, Marco and Ledru, Sylvestre},
+  title        = {Teaching machines to triage {Firefox} bugs},
+  howpublished = {Mozilla Hacks (Mozilla developer blog)},
+  year         = {2019},
+  month        = apr,
+  url          = {https://hacks.mozilla.org/2019/04/teaching-machines-to-triage-firefox-bugs/},
+  note         = {verified 2026-10-12 (fetched the post; posted 2019-04-09). Not peer reviewed: this is the production description of BugBug, including its 60\% confidence threshold and XGBoost model}
+}
+
+@inproceedings{dipongkor2023comparative,
+  author    = {Dipongkor, Atish Kumar and Moran, Kevin},
+  title     = {A Comparative Study of Transformer-based Neural Text Representation Techniques on Bug Triaging},
+  booktitle = {Proceedings of the 38th IEEE/ACM International Conference on Automated Software Engineering (ASE)},
+  year      = {2023},
+  eprint    = {2310.06913},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SE},
+  doi       = {10.48550/arXiv.2310.06913},
+  note      = {verified 2026-10-12 (arXiv abstract page states ``to appear in the Proceedings of 38th IEEE/ACM ASE'23'')}
+}
+
+@inproceedings{dipongkor2024ensemble,
+  author    = {Dipongkor, Atish Kumar},
+  title     = {An Ensemble Method for Bug Triaging Using Large Language Models},
+  booktitle = {Proceedings of the 2024 IEEE/ACM 46th International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)},
+  year      = {2024},
+  doi       = {10.1145/3639478.3641228},
+  note      = {verified 2026-10-12 (Semantic Scholar API; DBLP key conf/icse/Dipongkor24a)}
+}
+
+@inproceedings{lajko2026benchmarking,
+  author    = {Lajk{\'o}, M{\'a}rk and Nagy, Bal{\'a}zs and Vid{\'a}cs, L{\'a}szl{\'o}},
+  title     = {Benchmarking Classical, Transformer-Based, and {RAG} Approaches with {LLMs} for Automated Bug Triage},
+  booktitle = {Proceedings of the 21st International Conference on Software Technologies (ICSOFT)},
+  year      = {2026},
+  note      = {verified 2026-10-12 for title, authors and year (read from the paper PDF). VENUE NOT INDEPENDENTLY CONFIRMED: ICSOFT 2026 comes from the step-1 report, the PDF itself carries no venue line. Re-check before camera-ready}
+}
+
+% ---------- LLM 与 Agent 分派 ----------
+
+@article{mamun2026triagerx,
+  author  = {Mamun, Md Afif Al and Uddin, Gias and Xia, Lan and Zhang, Longyu},
+  title   = {{TriagerX}: Dual Transformers for Bug Triaging Tasks with Content and Interaction Based Rankings},
+  journal = {IEEE Transactions on Software Engineering},
+  year    = {2026},
+  doi     = {10.1109/TSE.2026.3685573},
+  eprint  = {2508.16860},
+  archivePrefix = {arXiv},
+  note    = {verified 2026-10-12 (arXiv abstract page states acceptance to IEEE TSE and gives the related DOI)}
+}
+
+@misc{kiashemshaki2025instruction,
+  author        = {Kiashemshaki, Kiana and Khosravani, Arsham and Hosseinpour, Alireza and Akhavan, Arshia},
+  title         = {Automated Bug Triaging using Instruction-Tuned Large Language Models},
+  year          = {2025},
+  eprint        = {2508.21156},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SE},
+  doi           = {10.48550/arXiv.2508.21156},
+  note          = {verified 2026-10-12 (arXiv abstract page). Preprint: no peer-reviewed venue stated on the page}
+}
+
+@inproceedings{wang2024comet,
+  author    = {Wang, Zexin and Li, Jianhui and Ma, Minghua and Li, Ze and Kang, Yu and Zhang, Chaoyun and Bansal, Chetan and Chintalapati, Murali and Rajmohan, Saravan and Lin, Qingwei and Zhang, Dongmei and Pei, Changhua and Xie, Gaogang},
+  title     = {Large Language Models Can Provide Accurate and Interpretable Incident Triage},
+  booktitle = {2024 IEEE 35th International Symposium on Software Reliability Engineering (ISSRE)},
+  year      = {2024},
+  note      = {verified 2026-10-12 (title, full author list and affiliations read from the paper PDF hosted by Microsoft Research at /en-us/research/wp-content/uploads/2024/08/ISSRE24\_LLM4triage.pdf, which encodes ISSRE 2024 in its name). The step-1 report called this ``COMET''; that is a shorthand, not the title}
+}
+
+@inproceedings{yu2025triangle,
+  author    = {Yu, Zhaoyang and Ma, Minghua and Feng, Xiaoyu and Ding, Ruomeng and Zhang, Chaoyun and Li, Ze and Chintalapati, Murali and Zhang, Xuchao and Wang, Rujia and Bansal, Chetan and Rajmohan, Saravan and Lin, Qingwei and Zhang, Shenglin and Pei, Changhua and Pei, Dan},
+  title     = {Triangle: Empowering Incident Triage with Multi-{LLM}-Agents},
+  booktitle = {Proceedings of the ACM International Conference on the Foundations of Software Engineering (FSE)},
+  year      = {2025},
+  note      = {verified 2026-10-12 (title and full author list read from the paper PDF hosted by Microsoft Research; the file is named TRIANGLE\_FSE25.pdf, which is where the FSE 2025 attribution comes from). OpenAlex did not return this record, so the venue is not independently confirmed}
+}
+
+@inproceedings{yao2026agentic,
+  author    = {Yao, Yuhan and Jiang, Yuxuan and Ma, Ming-Hua and Vaidya, Madhura and Deng, Jieren and Hu, Yigong and Bansal, Chetan and Li, Ze and Chintalapati, Murali},
+  title     = {An Agentic Framework for Triaging Incidents in Production Cloud Infrastructure},
+  booktitle = {Companion Proceedings of the ACM International Conference on the Foundations of Software Engineering (FSE Companion)},
+  year      = {2026},
+  doi       = {10.1145/3803437.3805228},
+  note      = {verified 2026-10-12 (Semantic Scholar API, DOI 10.1145/3803437.3805228; DBLP key conf/sigsoft/YaoJMVDHBLC26). The step-1 report called this ``Comfey''; that name does not appear in the title}
+}
+
+@misc{siavash2026tianoforge,
+  author        = {Siavash, Nazanin and Boult, Terrance E. and Moin, Armin},
+  title         = {{TianoForge}: An Automated Bug Triage Approach for the {TianoCore} {UEFI} Firmware Development Community},
+  year          = {2026},
+  eprint        = {2608.23259},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SE},
+  doi           = {10.48550/arXiv.2608.23259},
+  note          = {verified 2026-10-12 (arXiv abstract page). The page states the work was accepted for presentation at the FTA 2026 workshop but is deliberately NOT in the proceedings}
+}
+
+@inproceedings{cambronero2026abstain,
+  author    = {Cambronero, Jos{\'e} and Tufano, Michele and Shi, Sherry and Wei, Renyao and Uy, Grant and Cheng, Runxiang and Liu, Chin-Jung and Pan, Shiying and Chandra, Satish and Rondon, Pat},
+  title     = {Abstain and Validate: A Dual-{LLM} Policy for Reducing Noise in Agentic Program Repair},
+  booktitle = {2026 IEEE/ACM 48th International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)},
+  year      = {2026},
+  doi       = {10.1145/3786583.3786858},
+  eprint    = {2510.03217},
+  archivePrefix = {arXiv},
+  note      = {verified 2026-10-12 (arXiv abstract page states acceptance to ICSE-SEIP '26 and gives the related DOI)}
+}
+
+% ---------- 综述与数据资源 ----------
+
+@misc{zhao2025triage,
+  author        = {Zhao, Yongxin and Zhang, Shenglin and Wu, Yujia and Sun, Yuxin and Sun, Yongqian and Pei, Dan and Bansal, Chetan and Ma, Minghua},
+  title         = {Triage in Software Engineering: A Systematic Review of Research and Practice},
+  year          = {2025},
+  eprint        = {2511.08607},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SE},
+  doi           = {10.48550/arXiv.2511.08607},
+  note          = {verified 2026-10-12 (arXiv abstract page; reviews 234 papers). Preprint: no peer-reviewed venue stated}
+}
+
+@misc{patil2025gitbugs,
+  author        = {Patil, Avinash and Tao, Siru and Jadon, Aryan},
+  title         = {{GitBugs}: Bug Reports for Duplicate Detection, Retrieval Augmented Generation, Triage, and More},
+  year          = {2025},
+  eprint        = {2504.09651},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.SE},
+  doi           = {10.48550/arXiv.2504.09651},
+  note          = {verified 2026-10-12 (arXiv abstract page, v4 dated 2026-04-28)}
+}
+
+% ---------- 选择性预测与 conformal prediction（方法基础） ----------
+
+@article{chow1970optimum,
+  author  = {Chow, C. K.},
+  title   = {On Optimum Recognition Error and Reject Tradeoff},
+  journal = {IEEE Transactions on Information Theory},
+  year    = {1970},
+  doi     = {10.1109/TIT.1970.1054406},
+  note    = {verified 2026-10-12 (Semantic Scholar API; DBLP key journals/tit/Chow70). Volume and page numbers were NOT confirmed and are therefore omitted rather than guessed}
+}
+
+@article{elyaniv2010foundations,
+  author  = {El-Yaniv, Ran and Wiener, Yair},
+  title   = {On the Foundations of Noise-free Selective Classification},
+  journal = {Journal of Machine Learning Research},
+  volume  = {11},
+  number  = {53},
+  pages   = {1605--1641},
+  year    = {2010},
+  note    = {verified 2026-10-12 (OpenAlex: JMLR volume 11, issue 53, pages 1605--1641)}
+}
+
+@inproceedings{geifman2017selective,
+  author        = {Geifman, Yonatan and El-Yaniv, Ran},
+  title         = {Selective Classification for Deep Neural Networks},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year          = {2017},
+  eprint        = {1705.08500},
+  archivePrefix = {arXiv},
+  note          = {verified 2026-10-12 (OpenAlex locates the record in the NeurIPS proceedings at papers.nips.cc with a Technion affiliation; the arXiv abstract page confirms title, authors and year)}
+}
+
+@misc{angelopoulos2021gentle,
+  author        = {Angelopoulos, Anastasios N. and Bates, Stephen},
+  title         = {A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification},
+  year          = {2021},
+  eprint        = {2107.07511},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  doi           = {10.48550/arXiv.2107.07511},
+  note          = {verified 2026-10-12 (arXiv abstract page; v1 submitted 2021-07-15, v6 revised 2022-12-07). Year is the first-submission year}
+}

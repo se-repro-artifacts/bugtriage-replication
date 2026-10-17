@@ -1,0 +1,132 @@
+{
+ "dataset": "data/dataset_all.jsonl",
+ "label": "team",
+ "topn": 20,
+ "train_split": "train",
+ "test_split": "test2026",
+ "text": "sd",
+ "n_train": 11021,
+ "n_test": 6347,
+ "classes": [
+  "GFX",
+  "Layout",
+  "Frontend",
+  "OS Integration",
+  "DOM Core",
+  "Media",
+  "Search Next Generation",
+  "Javascript",
+  "DevTools",
+  "Accessibility",
+  "Networking",
+  "DOM LWS",
+  "Onboarding, Messaging, and Communication",
+  "Privacy Engineering",
+  "Credential Management",
+  "CI and Quality Tools",
+  "Crypto",
+  "Desktop Integrations",
+  "Security Engineering",
+  "Telemetry"
+ ],
+ "methods": {
+  "majority": {
+   "n": 6347,
+   "acc": 0.09421774066488105,
+   "macro_f1": 0.008610511159107272,
+   "top3": 0.352134866866236,
+   "AURC_risk": 0.9451337715430506,
+   "selective_acc_cov50": 0.06679269061121614,
+   "selective_acc_cov70": 0.09182984469952735,
+   "selective_acc_cov80": 0.10043324143363529,
+   "selective_acc_cov90": 0.10364145658263306
+  },
+  "keyword_rules": {
+   "n": 6347,
+   "acc": 0.19725854734520246,
+   "macro_f1": 0.24221554850865307,
+   "top3": 0.442413738774224,
+   "AURC_risk": 0.634900796934341,
+   "selective_acc_cov50": 0.26433522369250156,
+   "selective_acc_cov70": 0.2358766599144722,
+   "selective_acc_cov80": 0.22666404096100828,
+   "selective_acc_cov90": 0.21586134453781514
+  },
+  "tfidf_logreg": {
+   "n": 6347,
+   "acc": 0.6245470300929573,
+   "macro_f1": 0.5594545888739388,
+   "top3": 0.8444934614778635,
+   "AURC_risk": 0.1840208644709938,
+   "selective_acc_cov50": 0.8248267170762444,
+   "selective_acc_cov70": 0.7404906594643259,
+   "selective_acc_cov80": 0.6990941315478535,
+   "selective_acc_cov90": 0.6649159663865546
+  },
+  "tfidf_knn": {
+   "n": 6347,
+   "acc": 0.5378919174413108,
+   "macro_f1": 0.4979350886498791,
+   "top3": 0.7718607216007562,
+   "AURC_risk": 0.2657736128568329,
+   "selective_acc_cov50": 0.7394454946439823,
+   "selective_acc_cov70": 0.6542876434841324,
+   "selective_acc_cov80": 0.6108704214257582,
+   "selective_acc_cov90": 0.5766806722689075
+  },
+  "embed_knn": {
+   "n": 6347,
+   "acc": 0.5571135969749488,
+   "macro_f1": 0.4937215833428992,
+   "top3": 0.8101465259177564,
+   "AURC_risk": 0.25289711096702816,
+   "selective_acc_cov50": 0.7375551354757404,
+   "selective_acc_cov70": 0.66756695926176,
+   "selective_acc_cov80": 0.6321386372587633,
+   "selective_acc_cov90": 0.59593837535014,
+   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+   "k": 20
+  },
+  "xgboost": {
+   "n": 6347,
+   "acc": 0.5955569560422247,
+   "macro_f1": 0.5461737555544148,
+   "top3": 0.8214904679376083,
+   "AURC_risk": 0.1962334241937045,
+   "selective_acc_cov50": 0.8125393824826717,
+   "selective_acc_cov70": 0.7186585640333109,
+   "selective_acc_cov80": 0.6772351319417094,
+   "selective_acc_cov90": 0.6358543417366946,
+   "fit_seconds": 1050.8
+  }
+ },
+ "lr_C": 16.0,
+ "lr_val_acc": 0.6060365369340747,
+ "conformal": {
+  "alpha0.05": {
+   "target_coverage": 0.95,
+   "empirical_coverage": 0.9495824799117694,
+   "mean_set_size": 5.488892390105562,
+   "singleton_rate": 0.155191429021585,
+   "empty_rate": 0.0,
+   "threshold": 0.9736957605928183
+  },
+  "alpha0.10": {
+   "target_coverage": 0.9,
+   "empirical_coverage": 0.9062549235859462,
+   "mean_set_size": 3.5974476130455333,
+   "singleton_rate": 0.221206869387112,
+   "empty_rate": 0.0,
+   "threshold": 0.9530785195529461
+  },
+  "alpha0.20": {
+   "target_coverage": 0.8,
+   "empirical_coverage": 0.8132976209232708,
+   "mean_set_size": 2.0664881046163543,
+   "singleton_rate": 0.3637939183866394,
+   "empty_rate": 0.0,
+   "threshold": 0.9056618809700012
+  }
+ },
+ "embed_model": "sentence-transformers/all-MiniLM-L6-v2"
+}

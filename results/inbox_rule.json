@@ -1,0 +1,56 @@
+{
+ "per_split": {
+  "train": {
+   "n": 11465,
+   "specific_reassign": 831,
+   "inbox_triage": 1075,
+   "firefox_inbox": 955,
+   "suspect_general": 120,
+   "corrected_specific": 951
+  },
+  "test": {
+   "n": 5866,
+   "specific_reassign": 434,
+   "inbox_triage": 595,
+   "firefox_inbox": 546,
+   "suspect_general": 49,
+   "corrected_specific": 483
+  },
+  "test2026": {
+   "n": 7255,
+   "specific_reassign": 687,
+   "inbox_triage": 463,
+   "firefox_inbox": 395,
+   "suspect_general": 68,
+   "corrected_specific": 755
+  }
+ },
+ "suspect_products": {
+  "Data Platform and Tools": 6,
+  "Core": 99,
+  "Release Engineering": 1,
+  "Toolkit": 6,
+  "Fenix": 24,
+  "GeckoView": 15,
+  "Thunderbird": 30,
+  "Firefox Build System": 13,
+  "DevTools": 13,
+  "Testing": 3,
+  "WebExtensions": 10,
+  "bugzilla.mozilla.org": 1,
+  "Focus": 3,
+  "Socorro": 1,
+  "Developer Infrastructure": 5,
+  "Firefox for Android": 7
+ },
+ "decision": {
+  "date": "2026-10-16",
+  "reviewed_bugs": [
+   1760880,
+   1790055
+  ],
+  "reviewer_category": "inbox_triage",
+  "reading": "conservative: keep them out of the positive class",
+  "alternative_effect": "would enlarge the 2026 positive class by about a tenth"
+ }
+}

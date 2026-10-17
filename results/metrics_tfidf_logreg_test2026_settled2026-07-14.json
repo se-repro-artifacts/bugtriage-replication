@@ -1,0 +1,142 @@
+{
+ "records": "code\\..\\results\\pred_tfidf_logreg_test2026_settled2026-07-14.jsonl",
+ "condition": "tfidf_logreg",
+ "model": "classical",
+ "seed": null,
+ "split": "test2026",
+ "metrics": {
+  "n": 4648,
+  "coverage_parse": 1.0,
+  "acc_all": 0.6411359724612736,
+  "macro_f1": 0.5641177050997432,
+  "top3": 0.8530550774526678,
+  "n_tool_calls_mean": 0.0,
+  "latency_s_mean": 0.0,
+  "prompt_tokens_mean": 0.0,
+  "completion_tokens_mean": 0.0,
+  "AURC_risk": 0.16684371922495012,
+  "selective_acc_cov50": 0.8442340791738382,
+  "selective_acc_cov70": 0.759680393362016,
+  "selective_acc_cov80": 0.7165142549757935,
+  "selective_acc_cov90": 0.6827635668180732,
+  "abstain_rates_at_cov80": {
+   "reassigned": {
+    "n": 1074,
+    "abstain_rate_by_confidence": 0.15828677839851024
+   },
+   "never_reassigned": {
+    "n": 3574,
+    "abstain_rate_by_confidence": 0.21264689423614996
+   },
+   "moved_from_specific_component": {
+    "n": 535,
+    "abstain_rate_by_confidence": 0.18130841121495328
+   }
+  },
+  "explicit_abstain": {
+   "abstain_rate": 0.0,
+   "coverage": 1.0,
+   "acc_on_answered": 0.6411359724612736,
+   "abstain_recall_moved_from_specific": 0.0,
+   "abstain_rate_reassigned": 0.0,
+   "abstain_rate_never_reassigned": 0.0
+  },
+  "top_confusions": [
+   {
+    "true_team": "Frontend",
+    "pred_team": "Search Next Generation",
+    "n": 159
+   },
+   {
+    "true_team": "Search Next Generation",
+    "pred_team": "Frontend",
+    "n": 50
+   },
+   {
+    "true_team": "DOM Core",
+    "pred_team": "Layout",
+    "n": 45
+   },
+   {
+    "true_team": "Layout",
+    "pred_team": "GFX",
+    "n": 44
+   },
+   {
+    "true_team": "Media",
+    "pred_team": "GFX",
+    "n": 40
+   },
+   {
+    "true_team": "Frontend",
+    "pred_team": "Layout",
+    "n": 38
+   },
+   {
+    "true_team": "Layout",
+    "pred_team": "DOM Core",
+    "n": 35
+   },
+   {
+    "true_team": "GFX",
+    "pred_team": "Layout",
+    "n": 34
+   },
+   {
+    "true_team": "OS Integration",
+    "pred_team": "GFX",
+    "n": 31
+   },
+   {
+    "true_team": "Frontend",
+    "pred_team": "OS Integration",
+    "n": 29
+   }
+  ],
+  "by_ambiguity_category": {
+   "bot_only": {
+    "n": 202,
+    "acc": 0.7475247524752475,
+    "top3": 0.9504950495049505,
+    "abstain_rate_by_confidence_at_cov80": 0.07425742574257425,
+    "abstain_lift_at_cov80": 0.37128712871287134,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.039603960396039604,
+    "error_is_initial_team_rate": 0.0392156862745098
+   },
+   "inbox_triage": {
+    "n": 330,
+    "acc": 0.6363636363636364,
+    "top3": 0.8454545454545455,
+    "abstain_rate_by_confidence_at_cov80": 0.17272727272727273,
+    "abstain_lift_at_cov80": 0.8636363636363639,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.01818181818181818,
+    "error_is_initial_team_rate": 0.016666666666666666
+   },
+   "never_changed": {
+    "n": 3585,
+    "acc": 0.6435146443514644,
+    "top3": 0.8496513249651325,
+    "abstain_rate_by_confidence_at_cov80": 0.21227336122733612,
+    "abstain_lift_at_cov80": 1.0613668061366808,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.6432357043235705,
+    "error_is_initial_team_rate": 0.0
+   },
+   "specific_reassign": {
+    "n": 531,
+    "acc": 0.5875706214689266,
+    "top3": 0.8436911487758946,
+    "abstain_rate_by_confidence_at_cov80": 0.18267419962335216,
+    "abstain_lift_at_cov80": 0.913370998116761,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.3766478342749529,
+    "error_is_initial_team_rate": 0.2831050228310502
+   }
+  },
+  "pred_eq_initial_team_overall": 0.5421686746987951
+ },
+ "labeled_source": "code\\..\\data\\dataset_labeled.jsonl",
+ "tag": "tfidf_logreg_test2026_settled2026-07-14"
+}

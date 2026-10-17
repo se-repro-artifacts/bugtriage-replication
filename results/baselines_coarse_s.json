@@ -1,0 +1,267 @@
+{
+ "tag": "coarse_s",
+ "stats": {
+  "n_all": 17331,
+  "n_train_all": 11465,
+  "n_test_all": 5866,
+  "n_train": 11465,
+  "n_test": 5866,
+  "n_classes": 4
+ },
+ "classes": [
+  "Core",
+  "DevTools",
+  "Firefox",
+  "Toolkit"
+ ],
+ "test_reassign_rate": 0.22911694510739858,
+ "test_moved_at_this_granularity_rate": 0.15837026934878964,
+ "train_reassign_rate": 0.22616659398168337,
+ "models": {
+  "majority": {
+   "all": {
+    "n": 5866,
+    "acc": 0.6189907944084555,
+    "macro_f1": 0.1911656312519743,
+    "top3": 0.9444255028980566
+   },
+   "reassigned": {
+    "n": 1344,
+    "acc": 0.7366071428571429,
+    "macro_f1": 0.2120822622107969,
+    "top3": 0.9635416666666666
+   },
+   "never_reassigned": {
+    "n": 4522,
+    "acc": 0.5840336134453782,
+    "macro_f1": 0.1843501326259947,
+    "top3": 0.9387439186200797
+   },
+   "moved_at_this_granularity": {
+    "n": 929,
+    "acc": 0.8277717976318623,
+    "macro_f1": 0.22644287396937574,
+    "top3": 0.9590958019375673
+   },
+   "moved_from_specific_component": {
+    "n": 440,
+    "acc": 0.7204545454545455,
+    "macro_f1": 0.2093791281373844,
+    "top3": 0.9681818181818181
+   }
+  },
+  "keyword_rules": {
+   "all": {
+    "n": 5866,
+    "acc": 0.6460961472894647,
+    "macro_f1": 0.30508590878996705,
+    "top3": 0.9503920900102284
+   },
+   "reassigned": {
+    "n": 1344,
+    "acc": 0.7433035714285714,
+    "macro_f1": 0.265953280658245,
+    "top3": 0.9650297619047619
+   },
+   "never_reassigned": {
+    "n": 4522,
+    "acc": 0.6172047766475011,
+    "macro_f1": 0.3088960735356639,
+    "top3": 0.9460415745245466
+   },
+   "moved_at_this_granularity": {
+    "n": 929,
+    "acc": 0.8331539289558665,
+    "macro_f1": 0.29235596862734964,
+    "top3": 0.961248654467169
+   },
+   "moved_from_specific_component": {
+    "n": 440,
+    "acc": 0.7295454545454545,
+    "macro_f1": 0.28136410060002554,
+    "top3": 0.9704545454545455
+   }
+  },
+  "tfidf_logreg": {
+   "all": {
+    "n": 5866,
+    "acc": 0.7850323900443232,
+    "macro_f1": 0.5790751034765228,
+    "top3": 0.9832935560859188
+   },
+   "reassigned": {
+    "n": 1344,
+    "acc": 0.8132440476190477,
+    "macro_f1": 0.58111462674281,
+    "top3": 0.9836309523809523
+   },
+   "never_reassigned": {
+    "n": 4522,
+    "acc": 0.7766475011057055,
+    "macro_f1": 0.5777629526663439,
+    "top3": 0.9831932773109243
+   },
+   "moved_at_this_granularity": {
+    "n": 929,
+    "acc": 0.806243272335845,
+    "macro_f1": 0.4855672184619553,
+    "top3": 0.9784714747039828
+   },
+   "moved_from_specific_component": {
+    "n": 440,
+    "acc": 0.8,
+    "macro_f1": 0.6093464338966894,
+    "top3": 0.990909090909091
+   }
+  }
+ },
+ "keywords_sample": {
+  "Core": [
+   "gfx",
+   "ctw",
+   "jit",
+   "src",
+   "wasm",
+   "workspace",
+   "obj-build",
+   "wpt",
+   "moz_crash",
+   "hit"
+  ],
+  "DevTools": [
+   "resend",
+   "toolbox",
+   "highlighter",
+   "webconsole",
+   "damp",
+   "sources",
+   "breakpoint",
+   "styleeditor",
+   "inspectorutils",
+   "inspecting"
+  ],
+  "Firefox": [
+   "spotlight",
+   "callout",
+   "welcome",
+   "quickactions",
+   "experiments",
+   "experiment",
+   "sponsored",
+   "closet",
+   "pocket",
+   "promo"
+  ],
+  "Toolkit": [
+   "yellow",
+   "eligible",
+   "credit",
+   "autofill",
+   "cardholder",
+   "pip",
+   "hulu",
+   "autofilled",
+   "calvinklein",
+   "unmute"
+  ]
+ },
+ "lr_C": 4.0,
+ "lr_val_acc": 0.8384379785604901,
+ "selective_tfidf_logreg": {
+  "cov50": {
+   "selective_acc": 0.9382884418683941,
+   "frac_reassigned_in_kept": 0.22775315376747357
+  },
+  "cov70": {
+   "selective_acc": 0.8886994641987336,
+   "frac_reassigned_in_kept": 0.22771553823672674
+  },
+  "cov80": {
+   "selective_acc": 0.8576603451949713,
+   "frac_reassigned_in_kept": 0.22672064777327935
+  },
+  "cov90": {
+   "selective_acc": 0.8213676832733472,
+   "frac_reassigned_in_kept": 0.2295889372987308
+  },
+  "cov100": {
+   "selective_acc": 0.7850323900443232,
+   "frac_reassigned_in_kept": 0.22911694510739858
+  },
+  "AURC_risk": 0.07632354510396525,
+  "abstain_rate_at_cov80": {
+   "reassigned": 0.20833333333333334,
+   "moved_from_specific_component": 0.23636363636363636,
+   "never_reassigned": 0.19747899159663865
+  }
+ },
+ "error_analysis": {
+  "n_wrong": 1261,
+  "wrong_and_pred_eq_initial": 91,
+  "wrong_among_reassigned": 251,
+  "wrong_among_reassigned_pred_eq_initial": 91,
+  "reporter_initial_label_acc_on_test": 0.8416297306512104,
+  "top_confusions(true,pred,count)": [
+   [
+    "Firefox",
+    "Core",
+    411
+   ],
+   [
+    "Toolkit",
+    "Core",
+    267
+   ],
+   [
+    "DevTools",
+    "Core",
+    154
+   ],
+   [
+    "Core",
+    "Firefox",
+    151
+   ],
+   [
+    "Toolkit",
+    "Firefox",
+    149
+   ],
+   [
+    "DevTools",
+    "Firefox",
+    56
+   ],
+   [
+    "Firefox",
+    "Toolkit",
+    20
+   ],
+   [
+    "Core",
+    "Toolkit",
+    18
+   ],
+   [
+    "Core",
+    "DevTools",
+    17
+   ],
+   [
+    "DevTools",
+    "Toolkit",
+    7
+   ],
+   [
+    "Firefox",
+    "DevTools",
+    6
+   ],
+   [
+    "Toolkit",
+    "DevTools",
+    5
+   ]
+  ]
+ }
+}

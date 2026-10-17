@@ -1,0 +1,108 @@
+{
+ "dataset": "data/dataset_all.jsonl",
+ "label": "team",
+ "topn": 20,
+ "train_split": "train",
+ "test_split": "test2026",
+ "text": "sd",
+ "max_created": "2026-07-14",
+ "tag": "test2026_settled2026-07-14",
+ "n_train": 11021,
+ "n_test": 4648,
+ "classes": [
+  "GFX",
+  "Layout",
+  "Frontend",
+  "OS Integration",
+  "DOM Core",
+  "Media",
+  "Search Next Generation",
+  "Javascript",
+  "DevTools",
+  "Accessibility",
+  "Networking",
+  "DOM LWS",
+  "Onboarding, Messaging, and Communication",
+  "Privacy Engineering",
+  "Credential Management",
+  "CI and Quality Tools",
+  "Crypto",
+  "Desktop Integrations",
+  "Security Engineering",
+  "Telemetry"
+ ],
+ "methods": {
+  "majority": {
+   "n": 4648,
+   "acc": 0.10197934595524957,
+   "macro_f1": 0.009254197579070676,
+   "top3": 0.3569277108433735,
+   "AURC_risk": 0.9412044949772578,
+   "selective_acc_cov50": 0.07013769363166954,
+   "selective_acc_cov70": 0.10049170251997541,
+   "selective_acc_cov80": 0.10166756320602474,
+   "selective_acc_cov90": 0.10925173320583313
+  },
+  "keyword_rules": {
+   "n": 4648,
+   "acc": 0.2117039586919105,
+   "macro_f1": 0.24747013574694363,
+   "top3": 0.4537435456110155,
+   "AURC_risk": 0.6163338094139997,
+   "selective_acc_cov50": 0.2848537005163511,
+   "selective_acc_cov70": 0.25138291333743085,
+   "selective_acc_cov80": 0.23883808499193115,
+   "selective_acc_cov90": 0.22830504422663161
+  },
+  "tfidf_logreg": {
+   "n": 4648,
+   "acc": 0.6411359724612736,
+   "macro_f1": 0.5641177050997432,
+   "top3": 0.8530550774526678,
+   "AURC_risk": 0.16684371922495012,
+   "selective_acc_cov50": 0.8442340791738382,
+   "selective_acc_cov70": 0.759680393362016,
+   "selective_acc_cov80": 0.7165142549757935,
+   "selective_acc_cov90": 0.6827635668180732
+  },
+  "tfidf_knn": {
+   "n": 4648,
+   "acc": 0.5434595524956971,
+   "macro_f1": 0.4937807357185939,
+   "top3": 0.7811962134251291,
+   "AURC_risk": 0.25354644874156235,
+   "selective_acc_cov50": 0.7508605851979346,
+   "selective_acc_cov70": 0.6607252612169637,
+   "selective_acc_cov80": 0.6167294244217321,
+   "selective_acc_cov90": 0.581879034185991
+  }
+ },
+ "lr_C": 16.0,
+ "lr_val_acc": 0.6060365369340747,
+ "conformal": {
+  "alpha0.05": {
+   "target_coverage": 0.95,
+   "empirical_coverage": 0.9565404475043029,
+   "mean_set_size": 5.452022375215146,
+   "singleton_rate": 0.16114457831325302,
+   "empty_rate": 0.0,
+   "threshold": 0.9736957605928183
+  },
+  "alpha0.10": {
+   "target_coverage": 0.9,
+   "empirical_coverage": 0.9120051635111877,
+   "mean_set_size": 3.5632530120481927,
+   "singleton_rate": 0.22999139414802067,
+   "empty_rate": 0.0,
+   "threshold": 0.9530785195529461
+  },
+  "alpha0.20": {
+   "target_coverage": 0.8,
+   "empirical_coverage": 0.8259466437177281,
+   "mean_set_size": 2.0537865748709123,
+   "singleton_rate": 0.37478485370051634,
+   "empty_rate": 0.0,
+   "threshold": 0.9056618809700012
+  }
+ }
+}

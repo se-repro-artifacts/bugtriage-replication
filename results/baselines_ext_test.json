@@ -1,0 +1,106 @@
+{
+ "dataset": "code\\..\\data\\dataset.jsonl",
+ "label": "team",
+ "topn": 20,
+ "train_split": "train",
+ "test_split": "test",
+ "text": "sd",
+ "n_train": 11021,
+ "n_test": 5469,
+ "classes": [
+  "GFX",
+  "Layout",
+  "Frontend",
+  "OS Integration",
+  "DOM Core",
+  "Media",
+  "Search Next Generation",
+  "Javascript",
+  "DevTools",
+  "Accessibility",
+  "Networking",
+  "DOM LWS",
+  "Onboarding, Messaging, and Communication",
+  "Privacy Engineering",
+  "Credential Management",
+  "CI and Quality Tools",
+  "Crypto",
+  "Desktop Integrations",
+  "Security Engineering",
+  "Telemetry"
+ ],
+ "methods": {
+  "majority": {
+   "n": 5469,
+   "acc": 0.09526421649296032,
+   "macro_f1": 0.008697829716193655,
+   "top3": 0.3006034009873834,
+   "AURC_risk": 0.9286205591405147,
+   "selective_acc_cov50": 0.09875640087783467,
+   "selective_acc_cov70": 0.10841170323928945,
+   "selective_acc_cov80": 0.10948571428571428,
+   "selective_acc_cov90": 0.10585127996749288
+  },
+  "keyword_rules": {
+   "n": 5469,
+   "acc": 0.23642347778387274,
+   "macro_f1": 0.2988814457621142,
+   "top3": 0.4306088864509051,
+   "AURC_risk": 0.5167620048445327,
+   "selective_acc_cov50": 0.3771031455742502,
+   "selective_acc_cov70": 0.3100835945663532,
+   "selective_acc_cov80": 0.2848,
+   "selective_acc_cov90": 0.26269809020723284
+  },
+  "tfidf_logreg": {
+   "n": 5469,
+   "acc": 0.6253428414701042,
+   "macro_f1": 0.5702683009863904,
+   "top3": 0.8288535381239714,
+   "AURC_risk": 0.16377079993557492,
+   "selective_acc_cov50": 0.8471104608632041,
+   "selective_acc_cov70": 0.7586206896551724,
+   "selective_acc_cov80": 0.7122285714285714,
+   "selective_acc_cov90": 0.670865501828525
+  },
+  "tfidf_knn": {
+   "n": 5469,
+   "acc": 0.5459864691899798,
+   "macro_f1": 0.5056661150231821,
+   "top3": 0.7540683854452368,
+   "AURC_risk": 0.23507485453263718,
+   "selective_acc_cov50": 0.761521580102414,
+   "selective_acc_cov70": 0.6684952978056427,
+   "selective_acc_cov80": 0.6269714285714286,
+   "selective_acc_cov90": 0.5877691995123934
+  }
+ },
+ "lr_C": 16.0,
+ "lr_val_acc": 0.6060365369340747,
+ "conformal": {
+  "alpha0.05": {
+   "target_coverage": 0.95,
+   "empirical_coverage": 0.9343572865240446,
+   "mean_set_size": 5.404461510330957,
+   "singleton_rate": 0.17462058877308467,
+   "empty_rate": 0.0,
+   "threshold": 0.9736957605928183
+  },
+  "alpha0.10": {
+   "target_coverage": 0.9,
+   "empirical_coverage": 0.8880965441579813,
+   "mean_set_size": 3.575973669775096,
+   "singleton_rate": 0.24026330224904005,
+   "empty_rate": 0.0,
+   "threshold": 0.9530785195529461
+  },
+  "alpha0.20": {
+   "target_coverage": 0.8,
+   "empirical_coverage": 0.8036204059243006,
+   "mean_set_size": 2.068568294020845,
+   "singleton_rate": 0.3764856463704516,
+   "empty_rate": 0.0,
+   "threshold": 0.9056618809700012
+  }
+ }
+}

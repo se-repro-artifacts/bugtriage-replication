@@ -1,0 +1,74 @@
+/* Print stylesheet for the Chinese build of the paper.
+ *
+ * Why this route instead of LaTeX: Tectonic confines file access to the compilation directory, so
+ * XeTeX cannot open the Windows CJK fonts, and even with the TeX-distribution Fandol faces it
+ * writes a wrong ToUnicode map, so the Chinese renders but cannot be copied or searched out of the
+ * PDF. A browser resolves system fonts by name and writes correct text, which makes
+ * pandoc -> HTML -> Chrome --print-to-pdf the only accurate option available here.
+ */
+
+@page {
+  size: A4;
+  margin: 17mm 15mm 18mm 15mm;
+}
+
+html { font-size: 10.5pt; }
+
+body {
+  /* Microsoft YaHei for screen-like clarity; SimSun is the conventional print body face and is
+     the fallback if YaHei is missing. */
+  font-family: "Microsoft YaHei", "Microsoft YaHei UI", "SimSun", "Segoe UI", sans-serif;
+  line-height: 1.7;
+  color: #111;
+  margin: 0;
+  text-align: justify;
+}
+
+h1 { font-size: 1.6em; line-height: 1.35; margin: 0 0 .7em; text-align: left; }
+h2 {
+  font-size: 1.28em; margin: 1.5em 0 .5em; padding-bottom: .18em;
+  border-bottom: 1px solid #bbb; page-break-after: avoid; text-align: left;
+}
+h3 { font-size: 1.1em; margin: 1.15em 0 .4em; page-break-after: avoid; text-align: left; }
+h4 { font-size: 1em; margin: 1em 0 .35em; page-break-after: avoid; text-align: left; }
+
+p { margin: .5em 0; }
+ul, ol { margin: .5em 0 .5em 1.2em; padding: 0; }
+li { margin: .25em 0; }
+
+/* Tables carry up to eleven columns, so they get a smaller face and tight cells; without this the
+   widest one runs past the page edge. */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: .8em 0 1em;
+  font-size: .76em;
+  line-height: 1.35;
+}
+th, td {
+  border: 1px solid #9a9a9a;
+  padding: 3px 4px;
+  text-align: left;
+  vertical-align: top;
+}
+th { background: #f1f1f1; font-weight: 600; }
+thead { display: table-header-group; }   /* repeat the header when a table spans pages */
+
+blockquote {
+  margin: .7em 0;
+  padding: .55em .95em;
+  border-left: 3px solid #b5b5b5;
+  background: #fafafa;
+  color: #2a2a2a;
+}
+
+code { font-family: Consolas, "Courier New", monospace; font-size: .9em; background: #f5f5f5; }
+pre { background: #f7f7f7; border: 1px solid #e0e0e0; padding: .6em .8em; overflow-x: auto; }
+
+hr { border: none; border-top: 1px solid #ddd; margin: 1.2em 0; }
+
+/* The table of contents gets its own page. */
+nav#TOC, #TOC { page-break-after: always; }
+#TOC > ul { list-style: none; margin-left: 0; }
+#TOC ul { list-style: none; }
+#TOC a { text-decoration: none; color: #111; }

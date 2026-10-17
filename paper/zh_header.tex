@@ -1,0 +1,22 @@
+% Preamble additions for the Chinese build of the paper, which pandoc drives.
+%
+% Fonts: the document class is ctexart with fontset=fandol, passed on the pandoc command line, not
+% here. Tectonic confines file access to the directory of the main file, exactly as it does for the
+% bibliography, so XeTeX cannot open C:/Windows/Fonts and every attempt to name SimSun or SimHei
+% fails with "font cannot be found" whether it is given by family name, by Path+Extension, or by
+% full path. The Fandol faces ship inside the TeX distribution, so they resolve without fontconfig
+% and without leaving the compilation root.
+%
+% Layout: this paper's tables carry up to eleven columns. Pandoc sizes each column as
+% (\linewidth - 2(n-1)\tabcolsep)/n, which leaves the table 2\tabcolsep wider than the text block
+% no matter how narrow the content is, so the column separation is kept small to make that residue
+% negligible, and tables are set a size down so the cells still have room.
+\usepackage{etoolbox}
+\usepackage{longtable}
+\AtBeginEnvironment{longtable}{\footnotesize}
+\AtBeginEnvironment{tabular}{\footnotesize}
+\setlength{\tabcolsep}{2pt}
+
+% Wide tables are allowed to sit where they fall rather than float to the end of the document.
+\usepackage{float}
+\restylefloat{table}

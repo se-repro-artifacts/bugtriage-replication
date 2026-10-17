@@ -1,0 +1,34 @@
+{
+ "label": "fine",
+ "topn": 30,
+ "n_test": 2694,
+ "tokenizer": "tiktoken o200k_base (proxy)",
+ "measured": {
+  "Q_mean": 410.9053452115813,
+  "Q_median": 227.0,
+  "Q_p95": 1437.3999999999996,
+  "E_mean": 213.26328161730137,
+  "L_label_block": 1283,
+  "n_example_sample": 2127
+ },
+ "assumed": {
+  "S": 400,
+  "K": 10,
+  "O": 150,
+  "T": 6,
+  "R": 1500,
+  "O_step": 200
+ },
+ "per_bug": {
+  "rag_in": 4226.538161384595,
+  "rag_out": 150,
+  "agent_in": 38063.43207126949,
+  "agent_out": 1200
+ },
+ "total_test_set_Mtok": {
+  "rag_in": 11.386293806770098,
+  "rag_out": 0.4041,
+  "agent_in": 102.542886,
+  "agent_out": 3.2328
+ }
+}

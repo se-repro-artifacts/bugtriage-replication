@@ -1,0 +1,103 @@
+{
+ "records": "code\\..\\results\\llm_zeroshot_deepseek-flash_test2026_disabled_n12_seed0.jsonl",
+ "condition": "zeroshot",
+ "model": "deepseek-flash",
+ "seed": 0,
+ "split": "test2026",
+ "metrics": {
+  "n": 12,
+  "coverage_parse": 1.0,
+  "acc_all": 0.6666666666666666,
+  "macro_f1": 0.6666666666666666,
+  "top3": 1.0,
+  "n_tool_calls_mean": 0.0,
+  "latency_s_mean": 0.9991666666666666,
+  "prompt_tokens_mean": 9213.416666666666,
+  "completion_tokens_mean": 68.08333333333333,
+  "AURC_risk": 0.17980699855699855,
+  "selective_acc_cov50": 0.8333333333333334,
+  "selective_acc_cov70": 0.625,
+  "selective_acc_cov80": 0.7,
+  "selective_acc_cov90": 0.6363636363636364,
+  "abstain_rates_at_cov80": {
+   "reassigned": {
+    "n": 2,
+    "abstain_rate_by_confidence": 0.0
+   },
+   "never_reassigned": {
+    "n": 10,
+    "abstain_rate_by_confidence": 0.2
+   },
+   "moved_from_specific_component": {
+    "n": 1,
+    "abstain_rate_by_confidence": 0.0
+   }
+  },
+  "explicit_abstain": {
+   "abstain_rate": 0.0,
+   "coverage": 1.0,
+   "acc_on_answered": 0.6666666666666666,
+   "abstain_recall_moved_from_specific": 0.0,
+   "abstain_rate_reassigned": 0.0,
+   "abstain_rate_never_reassigned": 0.0
+  },
+  "top_confusions": [
+   {
+    "true_team": "OS Integration",
+    "pred_team": "DOM Core",
+    "n": 1
+   },
+   {
+    "true_team": "Search Next Generation",
+    "pred_team": "Frontend",
+    "n": 1
+   },
+   {
+    "true_team": "Layout",
+    "pred_team": "GFX",
+    "n": 1
+   },
+   {
+    "true_team": "Media",
+    "pred_team": "Crypto",
+    "n": 1
+   }
+  ],
+  "cost_usd_offpeak_list": 0.0171,
+  "cost_usd_per_bug": 0.001423,
+  "by_ambiguity_category": {
+   "inbox_triage": {
+    "n": 1,
+    "acc": 1.0,
+    "top3": 1.0,
+    "abstain_rate_by_confidence_at_cov80": 0.0,
+    "abstain_lift_at_cov80": 0.0,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.0
+   },
+   "never_changed": {
+    "n": 10,
+    "acc": 0.7,
+    "top3": 1.0,
+    "abstain_rate_by_confidence_at_cov80": 0.2,
+    "abstain_lift_at_cov80": 1.0000000000000002,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.7,
+    "error_is_initial_team_rate": 0.0
+   },
+   "specific_reassign": {
+    "n": 1,
+    "acc": 0.0,
+    "top3": 1.0,
+    "abstain_rate_by_confidence_at_cov80": 0.0,
+    "abstain_lift_at_cov80": 0.0,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 1.0,
+    "error_is_initial_team_rate": 1.0
+   }
+  },
+  "pred_eq_initial_team_overall": 0.6666666666666666
+ },
+ "labeled_source": "code\\..\\data\\dataset_labeled.jsonl",
+ "tag": "zeroshot_deepseek-flash_test2026_disabled_n12_seed0"
+}

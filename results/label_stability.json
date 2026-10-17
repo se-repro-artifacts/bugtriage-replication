@@ -1,0 +1,26 @@
+{
+ "2022-2024": {
+  "n_bugs_total": 17331,
+  "n_with_moves": 3937,
+  "days_to_last_move": {
+   "p50": 0.2,
+   "p90": 23.1,
+   "p95": 74.5,
+   "max": 1331.4,
+   "share_within_30d": 0.9152,
+   "share_within_90d": 0.9543
+  }
+ },
+ "2026": {
+  "n_bugs_total": 7255,
+  "n_with_moves": 1465,
+  "days_to_last_move": {
+   "p50": 0.2,
+   "p90": 11.4,
+   "p95": 27.0,
+   "max": 228.3,
+   "share_within_30d": 0.957,
+   "share_within_90d": 0.9904
+  }
+ }
+}

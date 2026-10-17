@@ -1,0 +1,34 @@
+{
+ "label": "team",
+ "topn": 20,
+ "n_test": 5469,
+ "tokenizer": "tiktoken o200k_base (proxy)",
+ "measured": {
+  "Q_mean": 368.2612909124154,
+  "Q_median": 200.0,
+  "Q_p95": 1392.0,
+  "E_mean": 207.39633333333333,
+  "L_label_block": 8092,
+  "n_example_sample": 3000
+ },
+ "assumed": {
+  "S": 400,
+  "K": 10,
+  "O": 150,
+  "T": 6,
+  "R": 1500,
+  "O_step": 200
+ },
+ "per_bug": {
+  "rag_in": 10934.224624245748,
+  "rag_out": 150,
+  "agent_in": 78661.56774547449,
+  "agent_out": 1200
+ },
+ "total_test_set_Mtok": {
+  "rag_in": 59.79927446999999,
+  "rag_out": 0.82035,
+  "agent_in": 430.200114,
+  "agent_out": 6.5628
+ }
+}

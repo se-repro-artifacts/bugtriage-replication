@@ -1,0 +1,14 @@
+{
+ "model": "deepseek-flash",
+ "prices_copied": "2026-10-12",
+ "price_source": "https://api-docs.deepseek.com/quick_start/pricing",
+ "local_prompt_measurement": {
+  "n_sampled": 30,
+  "label_block_tokens": 8092,
+  "zeroshot_input_mean": 8484.466666666667,
+  "rag_input_mean": 10553.866666666667,
+  "assumed_output_tokens": 150
+ },
+ "pilot": {},
+ "full_sweep_estimate": {}
+}

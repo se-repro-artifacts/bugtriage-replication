@@ -1,0 +1,144 @@
+{
+ "records": "code\\..\\results\\llm_agent_deepseek-flash_test2026_enabled_n100_seed0.jsonl",
+ "condition": "agent",
+ "model": "deepseek-flash",
+ "seed": 0,
+ "split": "test2026",
+ "metrics": {
+  "n": 99,
+  "coverage_parse": 0.9292929292929293,
+  "acc_all": 0.6767676767676768,
+  "macro_f1": 0.6860647943387881,
+  "top3": 0.8686868686868687,
+  "n_tool_calls_mean": 7.424242424242424,
+  "latency_s_mean": 14.57181818181818,
+  "prompt_tokens_mean": 42986.90909090909,
+  "completion_tokens_mean": 1441.969696969697,
+  "AURC_risk": 0.15537921135459792,
+  "selective_acc_cov50": 0.84,
+  "selective_acc_cov70": 0.8115942028985508,
+  "selective_acc_cov80": 0.7848101265822784,
+  "selective_acc_cov90": 0.7415730337078652,
+  "abstain_rates_at_cov80": {
+   "reassigned": {
+    "n": 23,
+    "abstain_rate_by_confidence": 0.30434782608695654
+   },
+   "never_reassigned": {
+    "n": 76,
+    "abstain_rate_by_confidence": 0.17105263157894737
+   },
+   "moved_from_specific_component": {
+    "n": 12,
+    "abstain_rate_by_confidence": 0.3333333333333333
+   }
+  },
+  "explicit_abstain": {
+   "abstain_rate": 0.020202020202020204,
+   "coverage": 0.9797979797979798,
+   "acc_on_answered": 0.6907216494845361,
+   "abstain_recall_moved_from_specific": 0.0,
+   "abstain_rate_reassigned": 0.0,
+   "abstain_rate_never_reassigned": 0.02631578947368421
+  },
+  "top_confusions": [
+   {
+    "true_team": "Frontend",
+    "pred_team": "Search Next Generation",
+    "n": 3
+   },
+   {
+    "true_team": "DOM Core",
+    "pred_team": "Frontend",
+    "n": 2
+   },
+   {
+    "true_team": "DOM Core",
+    "pred_team": "OS Integration",
+    "n": 2
+   },
+   {
+    "true_team": "Layout",
+    "pred_team": "GFX",
+    "n": 2
+   },
+   {
+    "true_team": "Privacy Engineering",
+    "pred_team": "Search Next Generation",
+    "n": 1
+   },
+   {
+    "true_team": "Search Next Generation",
+    "pred_team": "Privacy Engineering",
+    "n": 1
+   },
+   {
+    "true_team": "Desktop Integrations",
+    "pred_team": "Frontend",
+    "n": 1
+   },
+   {
+    "true_team": "Media",
+    "pred_team": "OS Integration",
+    "n": 1
+   },
+   {
+    "true_team": "Networking",
+    "pred_team": "Frontend",
+    "n": 1
+   },
+   {
+    "true_team": "Accessibility",
+    "pred_team": "DOM Core",
+    "n": 1
+   }
+  ],
+  "cost_usd_offpeak_list": 0.724,
+  "cost_usd_per_bug": 0.007313,
+  "by_ambiguity_category": {
+   "bot_only": {
+    "n": 5,
+    "acc": 0.2,
+    "top3": 0.8,
+    "abstain_rate_by_confidence_at_cov80": 0.2,
+    "abstain_lift_at_cov80": 1.0000000000000002,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.0,
+    "error_is_initial_team_rate": 0.0
+   },
+   "inbox_triage": {
+    "n": 5,
+    "acc": 0.4,
+    "top3": 0.6,
+    "abstain_rate_by_confidence_at_cov80": 0.4,
+    "abstain_lift_at_cov80": 2.0000000000000004,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.0,
+    "error_is_initial_team_rate": 0.0
+   },
+   "never_changed": {
+    "n": 77,
+    "acc": 0.7402597402597403,
+    "top3": 0.8961038961038961,
+    "abstain_rate_by_confidence_at_cov80": 0.16883116883116883,
+    "abstain_lift_at_cov80": 0.8441558441558443,
+    "explicit_abstain_rate": 0.025974025974025976,
+    "pred_eq_initial_team_rate": 0.7402597402597403,
+    "error_is_initial_team_rate": 0.0
+   },
+   "specific_reassign": {
+    "n": 12,
+    "acc": 0.5833333333333334,
+    "top3": 0.8333333333333334,
+    "abstain_rate_by_confidence_at_cov80": 0.3333333333333333,
+    "abstain_lift_at_cov80": 1.666666666666667,
+    "explicit_abstain_rate": 0.0,
+    "pred_eq_initial_team_rate": 0.4166666666666667,
+    "error_is_initial_team_rate": 0.6
+   }
+  },
+  "pred_eq_initial_team_overall": 0.6262626262626263
+ },
+ "labeled_source": "code\\..\\data\\dataset_labeled.jsonl",
+ "tag": "agent_deepseek-flash_test2026_enabled_n100_seed0"
+}
